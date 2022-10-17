@@ -35,13 +35,13 @@
         <div class="col-md-3 with">
            <div class="item">
             <h5>Withdraw</h5>
-            <h2>$00</h2>
+            <h2>$<span id="withDraw">00</h2>
            </div>
         </div>
         <div class="col-md-3 bala">
             <div class="item">
                 <h5>Balance</h5>
-            <h2>$00</h2>
+            <h2>$<span id="currentBalance">00</span></h2>
             </div>
         </div>
        </div>
@@ -58,8 +58,8 @@
             </div>
             <div class="col-md-5 side-2 ">
                 <h3>Withdraw</h3>
-                <input type="text" name="" id="too" placeholder="$How much Money You Want To Withdraw?"><br>
-                <button type="button" id="but" class="btn btn-success mt-4">Withdraw</button>
+                <input type="text" name="" id="withdrawAm" placeholder="$How much Money You Want To Withdraw?"><br>
+                <button type="button" id="addWithdraw" class="btn btn-success mt-4">Withdraw</button>
             </div>
         </div>
     </div>
@@ -107,14 +107,34 @@ depositTo.addEventListener("click",function(){
     var depositAmount =document.getElementById("to").value;
     var depoNum =parseFloat(depositAmount);
 
-    var depositAmo= document.getElementById("currentDeposit").innerText;
-    var dep = parseFloat(depositAmo);
-    var total =depoNum +dep;
+   
+  document.getElementById("to").value= "";
 
 
-    document.getElementById("currentDeposit").innerText= total;
-    document.getElementById("to").value= "";
+   
+     updateSpan("currentDeposit",depoNum);
+     updateSpan("currentBalance",depoNum);
+
 })
+////withdraw amoutn handler
+var wBtn = document.getElementById("addWithdraw");
+wBtn.addEventListener("click",function(){
+
+    var inputWith = document.getElementById("withdrawAm").value;
+    var wthd = parseFloat(inputWith)
+
+}) 
+
+function updateSpan(id,depoNum){
+var bal= document.getElementById(id).innerText;
+    var bal1 = parseFloat(bal);
+    var total1 =depoNum +bal1;
+    document.getElementById(id).innerText= total1;
+
+}
+
+
+
 
     </script>
 
