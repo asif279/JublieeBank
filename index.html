@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jublee Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <!-- <h1 class="bank-title mt-5">Welcome To Jublee Bank</h1> -->
+
+    <section class="container " id="sec">
+        <h1 class="bank-title mt-5">Welcome To Jublee Bank</h1>
+       <div class="div">
+
+        <h3 class="log mt-3">Login</h3>
+        <input type="email" name="" id="" class="email" placeholder="Enter Your Mail"><br>
+        <input type="password" name="" id="" class="mt-4 password" placeholder="Enter Your Password"><br>
+        <button id="LoginButton" type="button" class="btn btn-primary mt-3">Enter</button>
+       </div>
+
+    </section>
+
+    <div id="transection">
+        <!-- <h1 class="">Welcome to Transection Page</h1> -->
+       <div class="row">
+        <div class="col-md-3 depo">
+           <div class="item">
+            <h5>Deposit</h5>
+            <h2>$<span id="currentDeposit">00</span></h2>
+           </div>
+        </div>
+        <div class="col-md-3 with">
+           <div class="item">
+            <h5>Withdraw</h5>
+            <h2>$00</h2>
+           </div>
+        </div>
+        <div class="col-md-3 bala">
+            <div class="item">
+                <h5>Balance</h5>
+            <h2>$00</h2>
+            </div>
+        </div>
+       </div>
+
+
+       <div id="submitSide mt-5">
+        <div class="row">
+            <div class="col-md-5 side-1">
+                <h3>Deposit</h3>
+                <input type="text" name="" id="to" placeholder="$How much Money You Want To Deposit?"><br>
+                <button type="button" id="bu" class="btn btn-success mt-4">Deposit</button>
+
+
+            </div>
+            <div class="col-md-5 side-2 ">
+                <h3>Withdraw</h3>
+                <input type="text" name="" id="too" placeholder="$How much Money You Want To Withdraw?"><br>
+                <button type="button" id="but" class="btn btn-success mt-4">Withdraw</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        //login button event handler
+var logs=document.getElementById("LoginButton");
+logs.addEventListener("click",function(){
+
+ var loginArea = document.getElementById("sec");
+ loginArea.style.display ="none";
+
+ var trans = document.getElementById("transection");
+ trans.style.display ="block";
+})
+
+//deposit withdraw event handler
+var depositTo= document.getElementById("bu");
+depositTo.addEventListener("click",function(){
+    
+
+    var depositAmount =document.getElementById("to").value;
+    var depoNum =parseFloat(depositAmount);
+
+    var depositAmo= document.getElementById("currentDeposit").innerText;
+    var dep = parseFloat(depositAmo);
+    var total =depoNum +dep;
+
+
+    document.getElementById("currentDeposit").innerText= total;
+    document.getElementById("to").value= "";
+})
+
+    </script>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
