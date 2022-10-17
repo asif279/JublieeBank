@@ -35,16 +35,17 @@
         <div class="col-md-3 with">
            <div class="item">
             <h5>Withdraw</h5>
-            <h2>$<span id="withDraw">00</h2>
+            <h2>$<span id="withDraw">00</span></h2>
            </div>
         </div>
         <div class="col-md-3 bala">
             <div class="item">
                 <h5>Balance</h5>
-            <h2>$<span id="currentBalance">00</span></h2>
+            <h2>$<span id="currentBalance">785</span></h2>
             </div>
         </div>
        </div>
+       
 
 
        <div id="submitSide mt-5">
@@ -106,6 +107,7 @@ depositTo.addEventListener("click",function(){
 
     var depositAmount =document.getElementById("to").value;
     var depoNum =parseFloat(depositAmount);
+   // var wthNum =getInput("currentDeposit");
 
    
   document.getElementById("to").value= "";
@@ -120,10 +122,20 @@ depositTo.addEventListener("click",function(){
 var wBtn = document.getElementById("addWithdraw");
 wBtn.addEventListener("click",function(){
 
-    var inputWith = document.getElementById("withdrawAm").value;
-    var wthd = parseFloat(inputWith)
+var wthd =getInput("withdrawAm");
+updateSpan("withDraw",wthd);
+updateSpan("currentBalance",-1*wthd);
+document.getElementById("withdrawAm").value= "";
 
 }) 
+
+function getInput(id){
+    var inputWith = document.getElementById(id).value;
+    var wthd = parseFloat(inputWith);
+    return wthd;
+
+
+}
 
 function updateSpan(id,depoNum){
 var bal= document.getElementById(id).innerText;
